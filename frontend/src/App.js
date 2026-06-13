@@ -12,11 +12,11 @@ function App() {
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/api/apartments/")
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+  axios
+    .get("https://hayat-real-estate-api.onrender.com/api/apartments/")
+    .then((res) => setData(res.data))
+    .catch((err) => console.log(err));
+}, []);
 
   const filteredData =
   filter === "all"
