@@ -1,0 +1,205 @@
+
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ================= APP ================= */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a;
+  padding: 12px 20px;
+  color: white;
+  position: relative;
+}
+
+.logo {
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+/* Hamburger not used */
+.hamburger {
+  display: none !important;
+}
+
+/* Nav wrapper */
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+/* The actual menu (ul) — flex row */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.menu li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu button,
+.menu a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  padding: 6px 10px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.menu button:hover,
+.menu a:hover {
+  opacity: 0.75;
+}
+
+/* WHATSAPP (in nav) */
+.whatsapp {
+  background: green;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+/* ================= BANNER ================= */
+.banner {
+  width: 100%;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer .whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: green;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* ================= WHATSAPP BUTTON ================= */
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #25D366;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  /* Nav stays visible, scrolls horizontally */
+  .nav-links {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 6px;
+    padding: 4px 0;
+  }
+
+  .menu button,
+  .menu a {
+    font-size: 13px;
+    padding: 6px 10px;
+    background: #1e293b;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  /* banner stays auto-height — full image visible, no crop */
+}
